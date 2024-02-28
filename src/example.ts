@@ -15,3 +15,4 @@ export class Example {
     });
   }
 }
+console.log("dupa")
