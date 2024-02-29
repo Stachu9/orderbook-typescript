@@ -15,6 +15,6 @@ class Action {
     const orderType: string = this.orderType === OrderType.BUY ? "Buy" : "Sell";
     const actionType: string = this.actionType === ActionType.ADD ? "Add" : "Remove";
 
-    return "Id: {}  Order: {}  Type: {}  Price: {}$  Quantity: {}".format(self.orderId, orderType, actionType, self.price, self.quantity)
+    return `Id: ${this.orderId}  Order: ${orderType}  Type: ${actionType}  Price: $${this.price}  Quantity: ${this.quantity}`
   }
 }
