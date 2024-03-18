@@ -1,9 +1,9 @@
-enum OrderType {
+export enum OrderType {
   BUY,
   SELL
 }
 
-enum ActionType {
+export enum ActionType {
   ADD,
   REMOVE
 }

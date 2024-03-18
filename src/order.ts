@@ -1,6 +1,9 @@
-class Order {
+import {Action} from "./action";
+import {ActionType, OrderType} from "./enums";
 
-  private actions: Action[];
+export class Order {
+
+  private actions: Action[] = [];
 
   constructor(action: Action) {
     this.actions.push(action);
@@ -21,6 +24,11 @@ class Order {
   public getQuantity(): number {
 
     return this.actions.reduce((a: number, b: Action): number => b.actionType === ActionType.ADD ? a + b.quantity : a - b.quantity, 0)
+  }
+
+  public toString(): string {
+    const typeOfOrder: string = this.getOrderType() === OrderType.BUY ? "Buy" : "Sell";
+    return `Id: ${this.getId()}  Order type: ${typeOfOrder}  Price: $${this.getPrice()}  Quantity: ${this.getQuantity()}`;
   }
 
   public addAction(action: Action): void {

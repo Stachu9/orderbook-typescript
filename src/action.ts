@@ -1,4 +1,7 @@
-class Action {
+import {ActionType, OrderType} from "./enums";
+import {GivenOrder} from "./given_orders";
+
+export class Action {
   constructor(public readonly orderId: number,
               public readonly orderType: OrderType,
               public readonly actionType: ActionType,
