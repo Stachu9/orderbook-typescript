@@ -1,5 +1,5 @@
 import {OrderBook} from "./orderBook";
-import {givenOrders} from "./given_orders";
+import {GivenOrder, givenOrders} from "./given_orders";
 import {Action} from "./action";
 import {Order} from "./order";
 
@@ -9,7 +9,7 @@ function main(): void {
 
   console.log("No active orders");
 
-  for (let i = 0; i < givenOrders.length; i++) {
+  givenOrders.forEach((givenOrder: GivenOrder) => {
 
     console.log();
     //input
@@ -17,7 +17,7 @@ function main(): void {
     console.log();
     console.log("-----------------------------");
 
-    let action: Action = Action.createAction((givenOrders[i]));
+    let action: Action = Action.createAction(givenOrder);
     orderBook.addAction(action);
     let bestSharesToBuy = orderBook.findBestOfferToBuy();
     let bestSharesToSell = orderBook.findBestOfferToSell();
@@ -43,7 +43,7 @@ function main(): void {
       console.log("The best you can sell is - no BUY offers in orderbook")
     }
 
-  }
+  })
 
   console.log("No more given orders.")
 }

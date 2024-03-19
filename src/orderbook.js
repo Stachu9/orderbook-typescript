@@ -16,7 +16,7 @@ var OrderBook = /** @class */ (function () {
         }
     };
     OrderBook.prototype.getOrders = function () {
-        return this.orders;
+        return Array.from(this.orders.values());
     };
     OrderBook.prototype.findBestOfferToBuy = function () {
         var bestOfferToBuy;
