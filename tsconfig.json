@@ -9,5 +9,8 @@
     "removeComments": false,
     "noImplicitAny": true,
     "allowJs": true
-  }
+  },
+  "exclude": [
+    "./karma.conf.js"
+  ]
 }

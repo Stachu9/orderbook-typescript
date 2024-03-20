@@ -13,6 +13,13 @@ var Action = /** @class */ (function () {
     Action.createAction = function (givenOrder) {
         var orderType = givenOrder.Order === "Buy" ? enums_1.OrderType.BUY : enums_1.OrderType.SELL;
         var actionType = givenOrder.Type === "Add" ? enums_1.ActionType.ADD : enums_1.ActionType.REMOVE;
+        // console.log("!!!!!!!!!!!!!!!!!!!");
+        // console.log(givenOrder);
+        // console.log(orderType);
+        // let temp = new Action(givenOrder.Id, orderType, actionType, givenOrder.Price, givenOrder.Quantity);
+        // console.log(temp.orderType);
+        // console.trace()
+        // console.log("!!!!!!!!!!!!!!!!!!!");
         return new Action(givenOrder.Id, orderType, actionType, givenOrder.Price, givenOrder.Quantity);
     };
     Action.prototype.toString = function () {
